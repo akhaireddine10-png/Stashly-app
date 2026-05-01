@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stashly - Premium Goal Tracking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <h1>Stashly</h1>
+                <p class="tagline">Master Your Goals, Track Your Progress</p>
+            </div>
+            <div class="header-stats">
+                <div class="stat">
+                    <span class="stat-value" id="totalGoals">9</span>
+                    <span class="stat-label">Goals</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="avgProgress">0%</span>
+                    <span class="stat-label">Avg Progress</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Savings Category -->
+            <section class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title">💰 Savings</h2>
+                    <span class="category-badge">Financial Goals</span>
+                </div>
+                
+                <div class="goals-grid">
+                    <!-- Goal 1: Emergency Fund -->
+                    <div class="goal-card">
+                        <div class="goal-header">
+                            <h3 class="goal-name">Emergency Fund</h3>
+                            <span class="goal-amount" id="emergency-amount">$2,400</span>
+                        </div>
+                        <div class="progress-section">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="emergency-fill" style="width: 48%;"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span class="progress-current" id="emergency-current">$2,400</span>
+                                <span class="progress-target">/ $5,000</span>
+                                <span class="progress-percent" id="emergency-percent">48%</span>
+                            </div>
+                        </div>
+                        <button class="stash-btn" onclick="addMoney('emergency', 100)">+ Stash $100</button>
+                    </div>
+
+                    <!-- Goal 2: Vacation Fund -->
+                    <div class="goal-card">
+                        <div class="goal-header">
+                            <h3 class="goal-name">Vacation Fund</h3>
+                            <span class="goal-amount" id="vacation-amount">$1,800</span>
+                        </div>
+                        <div class="progress-section">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="vacation-fill" style="width: 36%;"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span class="progress-current" id="vacation-current">$1,800</span>
+                                <span class="progress-target">/ $5,000</span>
+                                <span class="progress-percent" id="vacation-percent">36%</span>
+                            </div>
+                        </div>
+                        <button class="stash-btn" onclick="addMoney('vacation', 100)">+ Stash $100</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Adventures Category -->
+            <section class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title">✈️ Adventures</h2>
+                    <span class="category-badge">Experience Goals</span>
+                </div>
+                
+                <div class="goals-grid">
+                    <!-- Goal 3: Japan Trip -->
+                    <div class="goal-card">
+                        <div class="goal-header">
+                            <h3 class="goal-name">Japan Trip</h3>
+                            <span class="goal-amount" id="japan-amount">$3,200</span>
+                        </div>
+                        <div class="progress-section">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="japan-fill" style="width: 64%;"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span class="progress-current" id="japan-current">$3,200</span>
+                                <span class="progress-target">/ $5,000</span>
+                                <span class="progress-percent" id="japan-percent">64%</span>
+                            </div>
+                        </div>
+                        <div class="countdown" id="japan-countdown">
+                            <div class="countdown-item">
+                                <span class="countdown-value" id="japan-days">45</span>
+                                <span class="countdown-label">Days</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-value" id="japan-hours">12</span>
+                                <span class="countdown-label">Hours</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-value" id="japan-minutes">30</span>
+                                <span class="countdown-label">Minutes</span>
+                            </div>
+                        </div>
+                        <button class="stash-btn" onclick="addMoney('japan', 100)">+ Stash $100</button>
+                    </div>
+
+                    <!-- Goal 4: Iceland Hike -->
+                    <div class="goal-card">
+                        <div class="goal-header">
+                            <h3 class="goal-name">Iceland Hike</h3>
+                            <span class="goal-amount" id="iceland-amount">$2,100</span>
+                        </div>
+                        <div class="progress-section">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="iceland-fill" style="width: 42%;"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span class="progress-current" id="iceland-current">$2,100</span>
+                                <span class="progress-target">/ $5,000</span>
+                                <span class="progress-percent" id="iceland-percent">42%</span>
+                            </div>
+                        </div>
+                        <div class="countdown" id="iceland-countdown">
+                            <div class="countdown-item">
+                                <span class="countdown-value" id="iceland-days">78</span>
+                                <span class="countdown-label">Days</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-value" id="iceland-hours">08</span>
+                                <span class="countdown-label">Hours</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-value" id="iceland-minutes">15</span>
+                                <span class="countdown-label">Minutes</span>
+                            </div>
+                        </div>
+                        <button class="stash-btn" onclick="addMoney('iceland', 100)">+ Stash $100</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gear Category -->
+            <section class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title">⚙️ Gear</h2>
+                    <span class="category-badge">Equipment Goals</span>
+                </div>
+                
+                <div class="goals-grid">
+                    <!-- Goal 5: MacBook Pro -->
+                    <div class="goal-card">
+                        <div class="goal-header">
+                            <h3 class="goal-name">MacBook Pro 16"</h3>
+                            <span class="goal-amount" id="macbook-amount">$1,200</span>
+                        </div>
+                        <div class="progress-section">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="macbook-fill" style="width: 24%;"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span class="progress-current" id="macbook-current">$1,200</span>
+                                <span class="progress-target">/ $5,000</span>
+                                <span class="progress-percent" id="macbook-percent">24%</span>
+                            </div>
+                        </div>
+                        <button class="stash-btn" onclick="addMoney('macbook', 100)">+ Stash $100</button>
+                    </div>
+
+                    <!-- Goal 6: Camera Setup -->
+                    <div class="goal-card">
+                        <div class="goal-header">
+                            <h3 class="goal-name">Camera Setup</h3>
+                            <span class="goal-amount" id="camera-amount">$2,800</span>
+                        </div>
+                        <div class="progress-section">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="camera-fill" style="width: 56%;"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span class="progress-current" id="camera-current">$2,800</span>
+                                <span class="progress-target">/ $5,000</span>
+                                <span class="progress-percent" id="camera-percent">56%</span>
+                            </div>
+                        </div>
+                        <button class="stash-btn" onclick="addMoney('camera', 100)">+ Stash $100</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Toast Notification -->
+        <div class="toast" id="toast"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
